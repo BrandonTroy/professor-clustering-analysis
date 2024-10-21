@@ -1,0 +1,7 @@
+Name
+College
+Quality Score
+Difficulty Score
+GPA
+Would Take Again
+Number of Ratings
