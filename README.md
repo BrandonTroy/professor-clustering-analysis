@@ -1,16 +1,25 @@
-## TODO
-- Finish preprocessing into df
-  - Only 2649 professors were found when mapping gradient data to ratemyprofessor data; search through missed_names.txt and not_found.json to try and minimize wrongly missed profs
+# CSC 522 Group 8 Project
 
-## Possible Clustering Methods
-- cluster by manually drawing lines where it looks nice
-- 
+## Professor Insights: Clustering Quality and Difficulty Across NCSU Colleges
 
-## Progress Report
-10/22:
-- Created filtered_distributions.json (filtered out all class sections from distributions.json where the professor wasn't found via 0.75 fuzzy search; dropped 28333 sections and 3998 instructors)
-- Created further_filtered_distributions.json (heavier filter on previous file, removed middle names and make cutoff 0.9)
+This project is a data science project that uses the [RateMyProfessors](https://www.ratemyprofessors.com/) website to scrape data on professors and their ratings, and [Gradient] to scrape data on grade distributions for each professor. The data is then used to cluster the professors based on their quality, difficulty, and average GPA, and identify similarities and differences of the rating distributions across colleges.
 
-10/23:
-- Combined data into combined_data.csv
-- Created missed_names.txt and not_found.json for names/sections that weren't mapped to a professor in the ratemyprofessor dataset
+### Usage
+
+The pipeline for this project is broken down into the following files:
+- [data_collection.ipynb](data_collection.ipynb): This notebook scrapes, processes, and aggregates the data into a single CSV file appropriate for analysis.
+- [aggregate_analysis.ipynb](aggregate_analysis.ipynb): This notebook, for data exploration, generates plots which visualize the aggregate distribution of the data.
+- [clustering_eval.ipynb](clustering_eval.ipynb): This notebook is used to determine the optimal clustering algorithm and hyperparameter values for the data.
+- [college_clustering.ipynb](college_clustering.ipynb): This notebook executes the clustering algorithm on the data and generates 2D and 3D plots which visualize the clustering results across the colleges.
+
+All of the processed data is stored in the `data` directory, so the `data_collection.ipynb` notebook does not need to be re-ran unless the scraping or pre-processing logic needs to be updated (both of those tasks can be ran separately). If you do need to re-run the scraping for Gradient, follow the instructions in the data collection notebook to set up your authorization headers.
+
+The files specific to the paper can be found in the `paper` directory.
+
+To run the pipeline, you will need to install the following Python packages:
+
+- [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Scikit-learn](https://scikit-learn.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+
