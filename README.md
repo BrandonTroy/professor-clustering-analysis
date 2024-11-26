@@ -14,7 +14,7 @@ The pipeline for this project is broken down into the following files:
 
 All of the processed data is stored in the `data` directory, so the `data_collection.ipynb` notebook does not need to be re-ran unless the scraping or pre-processing logic needs to be updated (both of those tasks can be ran separately). If you do need to re-run the scraping for Gradient, follow the instructions in the data collection notebook to set up your authorization headers.
 
-The files specific to the paper can be found in the `paper` directory.
+The source files for the paper can be found in the `paper` directory. The final PDF version of the paper itself is [P8_Professor_Clustering.pdf](paper/P8_Professor_Clustering.pdf).
 
 To run the pipeline, you will need to install the following Python packages:
 
